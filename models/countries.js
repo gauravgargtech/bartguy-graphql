@@ -1,8 +1,6 @@
-const {
-  DataTypes
-} = require('sequelize');
+const { DataTypes } = require("sequelize");
 
-module.exports = sequelize => {
+module.exports = (sequelize) => {
   const attributes = {
     id: {
       type: DataTypes.INTEGER(11),
@@ -11,7 +9,7 @@ module.exports = sequelize => {
       primaryKey: true,
       autoIncrement: true,
       comment: null,
-      field: "id"
+      field: "id",
     },
     sortname: {
       type: DataTypes.STRING(3),
@@ -20,7 +18,7 @@ module.exports = sequelize => {
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "sortname"
+      field: "sortname",
     },
     name: {
       type: DataTypes.STRING(150),
@@ -29,7 +27,7 @@ module.exports = sequelize => {
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "name"
+      field: "name",
     },
     phonecode: {
       type: DataTypes.INTEGER(11),
@@ -38,14 +36,19 @@ module.exports = sequelize => {
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "phonecode"
-    }
+      field: "phonecode",
+    },
   };
   const options = {
     tableName: "countries",
     comment: "",
-    indexes: []
+    indexes: [],
+    timestamp: false,
   };
-  const CountriesModel = sequelize.define("countries_model", attributes, options);
+  const CountriesModel = sequelize.define(
+    "countries_model",
+    attributes,
+    options
+  );
   return CountriesModel;
 };
