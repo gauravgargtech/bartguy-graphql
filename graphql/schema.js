@@ -2,29 +2,33 @@ const { buildSchema } = require("graphql");
 
 module.exports = buildSchema(`
 
-type BookData {
+type standardOutput {
     id : Int
-    name: String
-    pages : Int
+    name : String
 }
 
-type UserData {
+type CountryData {
+    data : [standardOutput]
+}
+
+type StatesData {
     id : Int
-    age : Int
-    city : String
+    name : String
+}
+
+type CitiesData {
+    id: Int
+    name: String
 }
 
 type RootQuery {
-    getBookData : BookData
-    getUserData : UserData
+    getCountries : CountryData
+    getStates : StatesData
+    getCities : CitiesData
 
-}
-type RootMutation { 
-    createBook(id: Int, name: String, pages: Int): String
 }
 
 schema {
     query: RootQuery
-    mutation: RootMutation
 }
 `);

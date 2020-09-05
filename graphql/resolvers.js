@@ -1,23 +1,30 @@
 module.exports = {
-  getBookData() {
+  getCountries() {
     return {
-      id: 7657656,
-      name: "Book nam s ths",
-      pages: 765,
+      data: [
+        {
+          id: 776,
+          name: "dd",
+        },
+        {
+          id: 876,
+          name: "dc",
+        },
+      ],
     };
   },
 
-  getUserData() {
+  getStates() {
     return {
       id: 45,
-      age: 4444,
-      city: "yamuna Nagar",
+      name: "yamuna Nagar",
     };
   },
 
-  createBook(args) {
-    console.log("list of arguments are");
-    console.log(args);
-    return "New book inserted";
+  getCities(args) {
+    return {
+      id: 45,
+      name: "",
+    };
   },
 };
