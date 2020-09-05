@@ -1,6 +1,6 @@
 const { graphqlHTTP } = require("express-graphql");
-const graphSchema = require("../graphql/schema");
-const resolver = require("../graphql/resolvers");
+const graphSchema = require("../graphql/schema/common");
+const resolver = require("../graphql/resolvers/common");
 
 module.exports = (app) => {
   app.use(

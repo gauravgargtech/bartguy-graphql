@@ -11,21 +11,18 @@ type CountryData {
     data : [standardOutput]
 }
 
-type StatesData {
-    id : Int
-    name : String
+type StatesData{
+    data : [standardOutput]
 }
 
 type CitiesData {
-    id: Int
-    name: String
+    data : [standardOutput]
 }
 
 type RootQuery {
     getCountries : CountryData
-    getStates : StatesData
-    getCities : CitiesData
-
+    getStates(countryId: Int) : StatesData
+    getCities(stateId: Int!) : CitiesData
 }
 
 schema {

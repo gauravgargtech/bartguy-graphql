@@ -43,7 +43,7 @@ module.exports = (sequelize) => {
     tableName: "countries",
     comment: "",
     indexes: [],
-    timestamp: false,
+    timestamps: false,
   };
   const CountriesModel = sequelize.define(
     "countries_model",
