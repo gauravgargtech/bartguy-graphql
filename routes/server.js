@@ -9,6 +9,12 @@ module.exports = (app) => {
       schema: graphSchema,
       rootValue: resolver,
       graphiql: true,
+      customFormatErrorFn(err) {
+        return {
+          message: err.message,
+          code: 422,
+        };
+      },
     })
   );
 };
